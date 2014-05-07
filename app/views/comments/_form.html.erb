@@ -1,0 +1,22 @@
+<hr />
+<br />
+<h3 class="title">寫下回應</h3>
+<%= form_for(@comment) do |f| %>
+  <div id="user_name">
+    <%= f.label :"訪客名字：" %>
+    <%= f.text_field :user_name %>
+  </div>
+  <br />
+  <div id="user_name">
+    <%= f.label :"回應內容：" %><br>
+    <br />
+    <%= f.text_area :body %>
+  </div>
+  <br />
+  <%= f.hidden_field :post_id %>
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+  <br />
+<% end %>
+
