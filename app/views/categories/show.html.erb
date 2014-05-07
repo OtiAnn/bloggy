@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<h1 class="title"><strong>Category:<%= @category.name %></strong></h1>
+<br/>
+<br/>
+<% if @posts.each do |post| %>
+	<div class="post">
+		<h2 class="title"><%= link_to post.title, post %></h2>
+		<p><%= truncate(post.body, length: 100) %></p>
+	</div>
+<% end.empty? %>
+	<div class="post">
+		<p>Sorry, 這個類別中沒有文章！</p>
+	</div>
+<% end %>
