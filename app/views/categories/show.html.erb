@@ -1,10 +1,16 @@
-<h1 class="title"><strong>Category:<%= @category.name %></strong></h1>
+<h1 class="title"><strong>文章類別:<%= @category.name %></strong></h1>
 <br/>
 <br/>
 <% if @posts.each do |post| %>
 	<div class="post">
 		<h2 class="title"><%= link_to post.title, post %></h2>
 		<p><%= truncate(post.body, length: 100) %></p>
+		<p class="note">
+		<small>發表時間：<%= post.created_at.strftime("%b %d. %Y") %></small>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ｜ 
+		訪客回應：<%= post.comments.count %> ｜ 
+		<%= link_to "繼續閱讀..", post %>
+		</p>
 	</div>
 <% end.empty? %>
 	<div class="post">

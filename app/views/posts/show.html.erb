@@ -3,7 +3,10 @@
 	<p>
 	  <%= @post.body %>
 	</p>
-  	  <%= @post.picture %>
+  	  <%= image_tag(@post.picture_url, width: '100%') if @post.picture.present? %>
+  	<p class="note"> 
+		<small>發表時間：<%= @post.created_at.strftime("%b %d. %Y") %></small>
+	</p>
 </div>
 
 <div class="comment">
