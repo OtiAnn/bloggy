@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'pages/about'
-
+  get 'pages/admin'
   get 'pages/contact'
 
   get 'home/index'

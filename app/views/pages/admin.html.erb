@@ -1,0 +1,44 @@
+<div class="post">
+	<h2 class="title">文章管理</h2>
+	<% all_posts.each do |post| %>
+		<ul>
+			<li><%= post.title %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
+				<%= link_to "查看", post %> | 
+				<%= link_to "編輯", edit_post_path(post) %> | 
+				<%= link_to '刪除', post, method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+		</ul>
+	<% end %>
+</div>
+
+
+
+<div class="post">
+	<h2 class="title">文章目錄管理</h2>
+	<% all_categories.each do |cat| %>
+		<ul>
+			<li><%= cat.name %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
+				<%= link_to "查看", cat %> | 
+				<%= link_to "編輯", edit_category_path(cat) %> | 
+				<%= link_to '刪除', cat, method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+		</ul>
+	<% end %>
+</div>
+
+<div class="post">
+	<h2 class="title">訪客回應管理</h2>
+	<% all_comments.each do |com| %>
+		<ul>
+			<li><%= com.user_name %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
+				<%= link_to "查看", com %> | 
+				<%= link_to "編輯", edit_comment_path(com) %> | 
+				<%= link_to '刪除', com, method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+		</ul>
+	<% end %>
+</div>
+
+<div class="post">
+	<h2 class="title">使用者帳號管理</h2>
+</div>

@@ -22,7 +22,7 @@
 				<% if user_signed_in? %>
   				<p><strong><%= current_user.email %></strong>登入中！</p><br />
   				<li><p><%= link_to '帳號資訊', edit_user_registration_path, :class => 'navbar-link' %></p></li>
-  				<li><p><%= link_to '管理後台', posts_path %></p></li>
+  				<li><p><%= link_to '管理後台', pages_admin_path %></p></li>
   				<li><p><%= link_to "登出", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></p></li>
 				<% else %>
 				<li><p><%= link_to "加入會員", new_user_registration_path, :class => 'navbar-link' %></p></li>

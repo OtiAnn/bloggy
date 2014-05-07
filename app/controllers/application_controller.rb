@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :all_categories
   helper_method :all_posts
+  helper_method :all_comments
   # before_action :authenticate_user!
   def all_categories
   	@categories = Category.all
@@ -13,4 +14,7 @@ class ApplicationController < ActionController::Base
   	@posts = Post.all
   end
 
+  def all_comments
+    @comments = Comment.all
+  end
 end
