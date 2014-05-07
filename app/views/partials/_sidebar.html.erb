@@ -1,0 +1,21 @@
+<div class="sidebar">
+	<ul>
+		<li>
+			<h2>文章目錄</h2>
+			<ul><% all_categories.each do |cat| %>
+				<li><p><%= link_to cat.name, category_path(:id => cat.id) %>
+				</p></li>
+				<% end %>
+			</ul>
+		</li>
+		<li>
+			<h2>文章列表</h2>
+			<ul><% all_posts.each do |post| %>
+				<li><p><%= link_to post.title, post_path(:id => post.id) %>
+				</p></li>
+				<% end %>
+			</ul>
+		</li>
+	</ul>
+</div>
+
