@@ -36,7 +36,7 @@ body{
 }
 	/*logo*/
 		#logo{
-			width: 200px;
+			width: 280px;
 			padding: 15px;
 			margin-left: 2%;
 			float: left;
@@ -64,17 +64,17 @@ body{
 		}
 	/*menu*/
 		#menu{
-			float: right;
-			margin: 0 10px;
+			float: left;
+			width: 60%;
 			margin-top: 30px;
-			width: 650px;
 		}
 		#menu ul{
 			list-style: none;
 		}
 		#menu li{
+			position:relative;
 			float: left;
-			padding: 0 5%;
+			margin: 0 5%;
 			padding-top: 50px;
 		}
 		#menu a{
@@ -82,14 +82,28 @@ body{
 			text-decoration: none;
 			font: normal 20px sans-serif;
 		}
-		#menu a:hover:after {
+		#menu .underscore{
+			position: absolute;
+			width: 0%;
+			left:50%;
+			margin-left: 0%;
+			height: 4px;
+			background-color: #2F7ED5;
+			-webkit-transition: all 0.3s;
+					transition: all 0.3s;
+		}
+		#menu li:hover>.underscore{
+			width: 100%;
+			margin-left: -50%;
+		}
+		/*#menu a:hover:after {
 		content: " ";
 		display: block;
 		border: 8px solid;
 		border-bottom: 0;
 		border-left: 0;
 		border-right: 0;
-		}
+		}*/
 
 /*sidebar*/
 .sidebar {
@@ -97,7 +111,6 @@ body{
 	position: absolute;
 	top: 250px;
 	width: 300px;
-	height: 100%;
 	margin-left: 60px;
 	padding: 20px 20px 0px 0px;
 }
@@ -176,10 +189,10 @@ body{
 .content{
 	/*float: left;*/
 	position: relative;
-	left: 450px;
-	max-width: 650px;
-	padding: 20px 0px 40px 0px;
-	margin: 5%;
+	left: 400px;
+	max-width: 750px;
+	padding: 0 0 40px 0;
+	margin-top: 60px;
 }
 	/*post*/
 	.post{
@@ -191,6 +204,7 @@ body{
 	.post .title {
 		height: 30px;
 		padding: 0;
+		padding-left: 30px;
 		letter-spacing: 1px;
 		font-family: 'Abel', sans-serif;
 	}
@@ -209,6 +223,7 @@ body{
 	.post p {
 		padding: 20px 30px 30px 30px;
 		padding-bottom: 30px;
+		line-height: 1.5;
 		letter-spacing: 1px;
 		font-family: Arial, Helvetica, sans-serif;
 	}
