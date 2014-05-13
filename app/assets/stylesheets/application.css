@@ -9,7 +9,6 @@ textarea{
 	height: 120px;
 }
 input{
-	width: 200px;
 	height: 20px;
 }
 .submit{
@@ -95,6 +94,8 @@ body{
 /*sidebar*/
 .sidebar {
 	float: left;
+	position: absolute;
+	top: 250px;
 	width: 300px;
 	height: 100%;
 	margin-left: 60px;
@@ -173,7 +174,9 @@ body{
 	
 /*content*/
 .content{
-	float: right;
+	/*float: left;*/
+	position: relative;
+	left: 450px;
 	max-width: 650px;
 	padding: 20px 0px 40px 0px;
 	margin: 5%;
@@ -184,7 +187,6 @@ body{
 		border-radius: 1em;
 		padding: 20px;
 		margin-bottom: 20px;
-		background-color: rgba(107, 227, 255, 0.23);
 	}
 	.post .title {
 		height: 30px;
