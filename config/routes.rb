@@ -10,7 +10,17 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :posts
+  namespace :admin do
+    resources :posts
+  end
+  
+  # get "posts", :to => "admin/posts#index"
+  # get "posts/new", :to => "admin/posts#new"
+  # get 'posts/:id/edit', :to => 'admin/posts#edit', as: :edit_post
+  # get 'posts/:id/show', :to => 'admin/posts#show', as: :post
+  # get 'posts/:id/destroy', :to => 'admin/posts#destroy'
+  # get "post", :to => "admin/post"
+  # 上面是曾經想偷懶不改所有erb路徑時做的轉換
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
