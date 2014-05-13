@@ -4,9 +4,9 @@
 		<ul>
 			<li><%= post.title %>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 
-				<%= link_to "查看", post %> | 
-				<%= link_to "編輯", edit_post_path(post) %> | 
-				<%= link_to '刪除', post, method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+				<%= link_to "查看", admin_post_path(post) %> | 
+				<%= link_to "編輯", edit_admin_post_path(post) %> | 
+				<%= link_to '刪除', admin_post_path(post), method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
 		</ul>
 	<% end %>
 </div>

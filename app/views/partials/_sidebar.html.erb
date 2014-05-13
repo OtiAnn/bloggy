@@ -11,7 +11,7 @@
 		<li>
 			<h2>文章列表</h2>
 			<ul><% all_posts.each do |post| %>
-				<li><p><%= link_to post.title, post_path(:id => post.id) %>
+				<li><p><%= link_to post.title, admin_post_path(:id => post.id) %>
 				</p></li>
 				<% end %>
 			</ul>
