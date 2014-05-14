@@ -5,7 +5,7 @@
 	</p>
   	  <%= image_tag(@post.picture_url, width: '100%') if @post.picture.present? %>
   	<p class="note"> 
-		<small>發表時間：<%= @post.created_at.strftime("%b %d. %Y") %></small>
+  		<small>文章作者：<%= @post.user.user_name %> | 發表時間：<%= @post.created_at.strftime("%b %d. %Y") %></small>
 	</p>
 </div>
 
