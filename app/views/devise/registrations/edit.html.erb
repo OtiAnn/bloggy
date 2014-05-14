@@ -1,8 +1,11 @@
 <div class="post">
-<h2 class="title">Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="title">編輯帳號</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  
+  <div><%= f.label :name %><br />
+  <%= f.text_field :user_name, autofocus: true %></div>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
@@ -11,21 +14,19 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <div><%= f.label :password %> <i>(如果不想更動密碼，請留空！)</i><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <div><%= f.label :current_password %> <i>(我們需要您現在的密碼以做更動！)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
   <div><%= f.submit "Update" %></div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "刪除帳號", registration_path(resource_name), data: { confirm: "你確定要刪掉帳號嗎？" }, method: :delete %></p>
-
+<hr />
+<small>Unhappy? <%= button_to "刪除帳號", registration_path(resource_name), data: { confirm: "你確定要刪掉帳號嗎？" }, method: :delete %></small>
+<br />
 <%= link_to "Back", :back %>
 </div>

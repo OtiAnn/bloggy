@@ -1,32 +1,30 @@
 class Admin::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-  # GET /posts
-  # GET /posts.json
+  
   def index
     @posts = Post.all
+    @users = User.all
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
     @comment = @post.comments.build
+    @post = Post.find(params[:id])
+    @user = User.all
   end
 
-  # GET /posts/new
   def new
     @post = Post.new
     @category = Category.all
   end
 
-  # GET /posts/1/edit
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @user = current_user
+    @post.set_user!(current_user)
 
     respond_to do |format|
       if @post.save
@@ -39,9 +37,8 @@ class Admin::PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
+    @user = User.all
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to [:admin, @post], notice: '文章更新成功！' }
@@ -53,8 +50,6 @@ class Admin::PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
     respond_to do |format|
@@ -71,6 +66,6 @@ class Admin::PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :picture, :category_id)
+      params.require(:post).permit(:title, :body, :picture, :user_id, :category_id)
     end
 end
