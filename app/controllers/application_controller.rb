@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :user_name
   end
+  #讓註冊時的名字可以被存取下來
+
 
   protect_from_forgery with: :exception
   helper_method :all_categories

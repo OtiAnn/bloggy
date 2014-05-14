@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :user
-	has_many :comments
+	has_many :comments, :dependent => :destroy
 	mount_uploader :picture, PictureUploader
 	default_scope { order("created_at DESC") } #按照創建時間排序
 
@@ -10,4 +10,5 @@ class Post < ActiveRecord::Base
     	self.user_id = user.id
 		self.save!
 	end
+	#讓文章發佈時存取現在登入者的帳號！
 end
