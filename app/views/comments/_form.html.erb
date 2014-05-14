@@ -3,7 +3,8 @@
 <h3 class="title">寫下回應</h3>
 <%= form_for(@comment) do |f| %>
   <div id="user_name">
-    <%= f.label :"訪客名字：" %>
+    <%= f.label :"訪客名字：" %><br>
+    <br />
     <%= f.text_field :user_name %>
   </div>
   <br />
@@ -15,7 +16,7 @@
   <br />
   <%= f.hidden_field :post_id %>
   <div class="submit">
-    <%= f.submit %>
+    <%= f.submit :"送出回應" %>
   </div>
   <br />
 <% end %>

@@ -2,31 +2,38 @@
 <h2 class="title">編輯帳號</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
   <%= devise_error_messages! %>
   
-  <div><%= f.label :name %><br />
+  <div><%= f.label :"名字：" %><br /><br>
   <%= f.text_field :user_name, autofocus: true %></div>
-
-  <div><%= f.label :email %><br />
+  <br />
+  <div><%= f.label :email %><br /><br>
   <%= f.email_field :email, autofocus: true %></div>
-
+  <br />
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(如果不想更動密碼，請留空！)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div><%= f.label :password %>  (如果不想更動密碼，請留空！)<br /><br>
+  <%= f.password_field :password, autocomplete: "off" %></div>
+  <br />
+  <div><%= f.label :password_confirmation %><br /><br>
+  <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <br />
+  <div><%= f.label :current_password %>  (我們需要您現在的密碼以做更動！)<br /><br>
+  <%= f.password_field :current_password, autocomplete: "off" %></div>
+  <br />
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <div class="submit"><%= f.submit "確定更新" %></div>
 
-  <div><%= f.label :current_password %> <i>(我們需要您現在的密碼以做更動！)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Update" %></div>
 <% end %>
-<hr />
-<small>Unhappy? <%= button_to "刪除帳號", registration_path(resource_name), data: { confirm: "你確定要刪掉帳號嗎？" }, method: :delete %></small>
-<br />
-<%= link_to "Back", :back %>
-</div>
+  <br />
+  <hr />
+  <br />
+  <div class="submit">不開心嗎？<%= button_to "刪除帳號", registration_path(resource_name), data: { confirm: "你確定要刪掉帳號嗎？" }, method: :delete %></div>
+  <br />
+
+  <%= link_to "回到前頁", :back %>
+  </div>

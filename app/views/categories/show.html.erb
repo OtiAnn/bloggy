@@ -3,14 +3,13 @@
 <br/>
 <% if @posts.each do |post| %>
 	<div class="post">
-		<h2 class="title"><%= link_to post.title, admin_post_path(post) %></h2>
-		<p><%= truncate(post.body, length: 100) %></p>
-		<p class="note">
-		<small>發表時間：<%= post.created_at.strftime("%b %d. %Y") %></small>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ｜ 
+	<h2 class="title"><%= link_to post.title, admin_post_path(post) %></h2>
+	<div class="note"><small>文章作者：<%= post.user.user_name %>&nbsp;&nbsp;|&nbsp;&nbsp;發表時間：<%= post.created_at.strftime("%b %d. %Y") %></small></div>
+	<p><%= truncate(post.body, length: 100) %></p>
+	<div class="note">
 		訪客回應：<%= post.comments.count %> ｜ 
 		<%= link_to "繼續閱讀..", admin_post_path(post) %>
-		</p>
+	</div>
 	</div>
 <% end.empty? %>
 	<div class="post">

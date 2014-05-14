@@ -4,9 +4,10 @@
 	  <%= @post.body %>
 	</p>
   	  <%= image_tag(@post.picture_url, width: '100%') if @post.picture.present? %>
-  	<p class="note"> 
+  	<div class="note"> 
+  		<br /><br />
   		<small>文章作者：<%= @post.user.user_name %> | 發表時間：<%= @post.created_at.strftime("%b %d. %Y") %></small>
-	</p>
+	</div>
 </div>
 
 <div class="comment">

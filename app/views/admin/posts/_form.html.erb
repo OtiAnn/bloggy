@@ -11,21 +11,25 @@
     </div>
   <% end %>
   
-  <div class="title">
-    <%= f.label :"文章標題" %><br>
+  <div><br><br>
+    <%= f.label :"文章標題" %><br><br>
     <%= f.text_field :title %>
   </div>
-  <div class="title">
-    <%= f.label :"文章內容" %><br>
+  <br />
+  <div>
+    <%= f.label :"文章內容" %><br><br>
     <%= f.text_area :body %>
   </div>
-  <div class="title">
-    <%= f.label :"上傳圖片" %><br>
+  <br />
+  <div>
+    <%= f.label :"上傳圖片" %><br><br>
     <%= f.file_field :picture %>
   </div>
-  <div class="title">
+  <br />
+  <div>
     文章類別：<%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]},{:include_blank => "選擇類別"} %><br>
   </div>
+  <br />
   <div class="submit">
     <%= f.submit %>
   </div>
