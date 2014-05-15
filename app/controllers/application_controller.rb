@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
   def all_categories
   	@categories = Category.all
   end
-  
+
   def all_posts
-  	@posts = Post.all
+    @posts = Post.all
   end
 
   def all_comments
