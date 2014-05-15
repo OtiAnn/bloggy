@@ -3,6 +3,7 @@
 <head>
   <title>Bloggy</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel=stylesheet type="text/css" href="assets/stylesheets/style.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -15,19 +16,19 @@
 		</div>
 		<div id="menu">
 			<ul class="main_menu">
-				<li>
-					<%= link_to "About Me", pages_about_path %>
+				<li class="lsf-icon about">
+					<%= link_to "About Us", pages_about_path %>
 					<div class="underscore"></div>
 				</li>
-				<li>
+				<li class="lsf-icon blogpost">
 					<%= link_to "Blog Post", admin_posts_path %>
 					<div class="underscore"></div>
 				</li>
-				<li>
+				<li class="lsf-icon contact">
 					<%= link_to "Contact", pages_contact_path %>
 					<div class="underscore"></div>
 				</li>
-				<li>
+				<li class="lsf-icon home">
 					<%= link_to "Home", root_path %>
 					<div class="underscore"></div>
 				</li>
