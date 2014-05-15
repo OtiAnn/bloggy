@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   validates :user_name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
+  include Gravtastic
+  gravtastic
+
 end

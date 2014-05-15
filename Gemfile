@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'devise'
+gem 'gravtastic'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server

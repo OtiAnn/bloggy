@@ -200,7 +200,7 @@ body{
 	position: relative;
 	left: 400px;
 	max-width: 750px;
-	min-height: 650px;
+	min-height: 700px;
 	padding: 0 0 40px 0;
 	margin-top: 60px;
 }
@@ -211,6 +211,7 @@ body{
 		padding: 20px;
 		padding-bottom: 52px;
 		margin-bottom: 20px;
+		min-height: 200px;
 	}
 	.post .title {
 		height: 30px;
@@ -224,7 +225,10 @@ body{
 		text-decoration: none;
 		color: #202020;
 	}
-
+	.post ul {
+		float: left;
+		list-style: none;
+	}
 	.post .note {
 		text-align: right;
 		margin-bottom: -20px;
@@ -312,18 +316,63 @@ body{
   content:attr(title);
   margin-right:0.3em;
   font-size:190%;
-  color: #2F7ED5;
 }
 .lsf-icon.about:before {
+  color: #2F7ED5;
   content: '\E05c';
 }
 .lsf-icon.blogpost:before {
   content: '\E002';
+  color: #2F7ED5;
 }
 .lsf-icon.home:before {
   content: '\E072';
+  color: #2F7ED5;
 }
 
 .lsf-icon.contact:before {
   content: '\E097';
+  color: #2F7ED5;
+}
+
+.lsf-icon.comments:before {
+  content: '\E035';
+  font-size: 140%;
+}
+
+.lsf-icon.readmore:before {
+  content: '\E020';
+  font-size: 140%;
+}
+
+
+
+
+/*gavatar*/
+
+.user-gravatar {
+    display: inline-block;
+    width: 100px;
+    position: relative;
+    margin: 0;
+}
+
+.user-gravatar img {
+    position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	top: -50px;
+	margin: 20px;
+}
+
+.aboutus {
+	padding: 16px;
+	text-align: center;
+}
+
+.aboutus .user-name {
+	position: relative;
+	top: 80px;
+	left: 70%;
 }
