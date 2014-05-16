@@ -19,6 +19,8 @@ class Admin::PostsController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @post = @user.posts.find(params[:id])
   end
 
   def create
