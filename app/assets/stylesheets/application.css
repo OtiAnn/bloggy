@@ -27,7 +27,10 @@ body{
 	margin:0;
 	padding:0;
 	height:100%;
-
+	background-image: url("bg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 #wrapper{
 	min-height:100%;
@@ -36,44 +39,46 @@ body{
 }
 /*header*/
 .header{
-	height: 200px;
-	margin-top: 10px;
-	margin-right: 10px;
-	margin-left: 10px;
+	height: 180px;
 }
 	/*logo*/
 		#logo{
-			width: 280px;
-			padding: 15px;
-			margin-left: 2%;
-			float: left;
+			margin: 0 auto;
 		}
 		#logo h1{
-			margin-left: -2px;
-			padding: 0;
 			letter-spacing: -2px;
 			text-transform: uppercase;
 			font-family: 'Abel', sans-serif;
 			font-size: 3.8em;
 			font-weight: bold;
-			color: #349ACA;
+			color: #063263;
+			margin-top: 0;
 			
 		}
 		#logo a{
-			color: #349ACA;
+			color: #063263;
 			text-decoration: none;
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			letter-spacing: 30px;
 		}
 		#logo p{
-			margin: 0;
-			padding: 0px 0 0 78px;
-			font: normal 14px;
 			color: #847F7E;
+			font-family: fantasy;
+			font-size: 24px;
+			word-spacing: 10px;
+			letter-spacing: 4px;
+			text-align: center;
+			margin-top: 40px;
+			padding-right: 35px;
 		}
 	/*menu*/
 		#menu{
-			float: left;
-			width: 60%;
-			margin-top: 30px;
+			width: 880px;
+			margin: 0 auto;
+			position: relative;
+			top: -55px;
 		}
 		#menu ul{
 			list-style: none;
@@ -85,7 +90,7 @@ body{
 			padding-top: 50px;
 		}
 		#menu a{
-			color: #2F7ED5;
+			color: #063263;
 			text-decoration: none;
 			font: normal 20px sans-serif;
 		}
@@ -95,7 +100,7 @@ body{
 			left:50%;
 			margin-left: 0%;
 			height: 4px;
-			background-color: #2F7ED5;
+			background-color: #063263;
 			opacity: 0.5;
 			-webkit-transition: all 0.3s;
 					transition: all 0.3s;
@@ -116,16 +121,24 @@ body{
 
 /*sidebar*/
 .sidebar {
-	float: left;
 	position: absolute;
-	top: 250px;
-	width: 300px;
-	margin-left: 60px;
-	padding: 20px 20px 0px 0px;
+	top: 0;
+	right: -268px;
+	-webkit-transition: all 0.3s ease-out;
 }
+
+.sidebar:hover{
+	right: 0;
+}
+
+	.lsf-icon.search {
+		background-color: rgba(255, 255, 255, 0.29);
+		padding: 2px;
+	}
 
 	.sidebar ul {
 		margin: 0;
+		margin-top: 40px;
 		padding: 0;
 		list-style: none;
 	}
@@ -155,16 +168,17 @@ body{
 		margin: 0px 20px 20px 10px;
 		padding: 4px 0px;
 		padding-left: 40px;
-		font-size: 2em;
-		color: #2963CA;
+		font-size: 27px;
+		color: rgba(255, 255, 255, 0.6);
+		text-shadow: 0.5px 0.5px 1px rgba(119, 116, 116, 0.5);
 	}
 	.sidebar h2:before {
 		content: " ";
 		display: block;
 		position: absolute;
 		left: 0;
-		border: 20px solid transparent;
-		border-top: 34px solid #2963ca;
+		border: 13px solid transparent;
+		border-top: 18px solid rgba(255, 255, 255, 0.5);
 		height: 0;
 		width: 0;
 	}
@@ -180,38 +194,38 @@ body{
 	}
 	.sidebar a:before {
 		content: "";
-		border: 4px solid #A7E6E9;
 		margin-right: 5px;
+		border: 4px solid rgba(255, 255, 255, 0.5);
 	}
 	.sidebar a:hover {
-		text-decoration: underline;
-		color: #000000;
+		text-decoration: none;
+		color: rgba(253, 235, 162, 0.9);
 
 	}
 	.sidebar a:hover:before {
 		content: "";
-		border: 4px solid #2963CA;
+		border: 4px solid rgba(253, 235, 162, 0.9);
 		margin-right: 5px;
 	}
 	
 /*content*/
 .content{
-	/*float: left;*/
 	position: relative;
-	left: 400px;
 	max-width: 750px;
 	min-height: 700px;
 	padding: 0 0 40px 0;
-	margin-top: 60px;
+	margin: 0 auto;
+	margin-top: 100px;
 }
 	/*post*/
 	.post{
-		border: 5px solid #349ACA;
-		border-radius: 1em;
+		border: 1px solid #BEBEBE;
+		border-radius: 5px;
 		padding: 20px;
 		padding-bottom: 52px;
-		margin-bottom: 20px;
+		margin-bottom: 60px;
 		min-height: 200px;
+		background-color: rgba(255,255,255,0.7);
 	}
 	.post .title {
 		height: 30px;
@@ -234,6 +248,7 @@ body{
 		margin-bottom: -20px;
 		margin-top: -20px;
 		margin-right: 34px;
+		letter-spacing: 2px;
 	}
 	.post p {
 		padding: 20px 30px 30px 30px;
@@ -253,25 +268,32 @@ body{
 	
 	/*comment*/
 	.comment{
-		border: 1px dashed #349ACA;
-		border-radius: 1.5em;
+		border: 1px solid rgba(62, 143, 168, 0.50);
+		border-radius: 2px;
 		padding: 5px 25px;
 		margin-top: 30px;
+		background-color: rgba(52, 155, 203, 0.5);
+		font-family: monospace, Courier, "Courier New";
+		font-size: 16px;
 	}
 
 	.comment .title {
-		letter-spacing: 2px;
+		letter-spacing: 8px;
 		height: 30px;
+		color: #fff;
 	}
 
 	.comment #user_name {
 		letter-spacing: 5px;
 		padding-left: 15px;
+		color: #fff;
+		text-shadow: 1px 1px 3px rgba(0, 122, 255, 0.5);
 	}
 
 	.comment p {
 		padding: 0 35px;
-		color: #2963ca;
+		color: #C1F2F6;
+		letter-spacing: 2px;
 	}
 
 /*footer*/
@@ -279,9 +301,10 @@ body{
 	height: 80px;
 	width:100%;
 	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: monospace, Courier, "Courier New";
 	position:absolute;
 	bottom: 0;
+	color: rgba(255,255,255,0.7);
 }
 
 /* LigatureSymbols CSS */
@@ -318,21 +341,21 @@ body{
   font-size:190%;
 }
 .lsf-icon.about:before {
-  color: #2F7ED5;
+  color: #063263;
   content: '\E05c';
 }
 .lsf-icon.blogpost:before {
   content: '\E002';
-  color: #2F7ED5;
+  color: #063263;
 }
 .lsf-icon.home:before {
   content: '\E072';
-  color: #2F7ED5;
+  color: #063263;
 }
 
 .lsf-icon.contact:before {
   content: '\E097';
-  color: #2F7ED5;
+  color: #063263;
 }
 
 .lsf-icon.comments:before {
@@ -345,7 +368,14 @@ body{
   font-size: 140%;
 }
 
-
+.lsf-icon.search:before {
+	content: '\E116';
+	font-size: 200%;
+	background-color: rgba(0, 0, 0, 0.64);
+	color: #fff;
+	padding: 5px 10px;
+	margin-left: -40px;
+}
 
 
 /*gavatar*/
