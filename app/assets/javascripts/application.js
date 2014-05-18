@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14,3 +15,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$().ready(function() {
+
+	$("#toggle-sidebar").click(function() {
+		$('.sidebar').toggleClass('js-slide-left')
+		// if($('.sidebar').hasClass('js-slide-left')==true){
+		// 	$('.sidebar').removeClass('js-slide-left');
+		// }else{
+		// 	$('.sidebar').addClass('js-slide-left');
+		// }
+	});
+
+
+});

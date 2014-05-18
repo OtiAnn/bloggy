@@ -121,13 +121,13 @@ body{
 
 /*sidebar*/
 .sidebar {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: -268px;
 	-webkit-transition: all 0.3s ease-out;
 }
 
-.sidebar:hover{
+.js-slide-left{
 	right: 0;
 }
 
