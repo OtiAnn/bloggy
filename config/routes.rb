@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :posts
   end
   
+  root 'home#index'
+  
   # get "posts", :to => "admin/posts#index"
   # get "posts/new", :to => "admin/posts#new"
   # get 'posts/:id/edit', :to => 'admin/posts#edit', as: :edit_post
@@ -26,7 +28,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
