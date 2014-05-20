@@ -8,17 +8,11 @@ Rails.application.routes.draw do
 
   resources :categories
 
-<<<<<<< HEAD
-  namespace :admin do
-    resources :posts
-  end
-  
   root 'home#index'
-  
-=======
+
   resources :posts
 
->>>>>>> admin
+
   # get "posts", :to => "admin/posts#index"
   # get "posts/new", :to => "admin/posts#new"
   # get 'posts/:id/edit', :to => 'admin/posts#edit', as: :edit_post
