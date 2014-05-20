@@ -16,16 +16,10 @@
 //= require turbolinks
 //= require_tree .
 
-$().ready(function() {
+$(document).on('page:change', function() {
 
-	$("#toggle-sidebar").click(function() {
-		$('.sidebar').toggleClass('js-slide-left')
-		// if($('.sidebar').hasClass('js-slide-left')==true){
-		// 	$('.sidebar').removeClass('js-slide-left');
-		// }else{
-		// 	$('.sidebar').addClass('js-slide-left');
-		// }
+	$("#toggle-sidebar").on('click', function() {
+		$('.sidebar').toggleClass('js-slide-left');
 	});
-
 
 });

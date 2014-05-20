@@ -12,7 +12,7 @@
 		<li>
 			<h2>文章列表</h2>
 			<ul><% all_posts.each do |post| %>
-				<li><p><%= link_to post.title, admin_post_path(:id => post.id) %>
+				<li><p><%= link_to post.title, post_path(:id => post.id) %>
 				</p></li>
 				<% end %>
 			</ul>
@@ -23,7 +23,7 @@
 				<% if user_signed_in? %>
   				<p><strong><%= current_user.user_name %></strong>登入中！</p><br />
   				<li><p><%= link_to '帳號資訊', edit_user_registration_path, :class => 'navbar-link' %></p></li>
-  				<li><p><%= link_to '新增文章', new_admin_post_path %></p></li>
+  				<li><p><%= link_to '新增文章', new_post_path %></p></li>
   				<li><p><%= link_to '管理後台', pages_admin_path %></p></li>
   				<li><p><%= link_to "登出", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></p></li>
 				<% else %>
@@ -34,4 +34,3 @@
 		</li>
 	</ul>
 </div>
-
