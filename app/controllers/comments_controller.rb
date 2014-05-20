@@ -27,9 +27,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to [:admin, @comment.post], notice: '你的回應儲存成功！' }
+        format.html { redirect_to @comment.post, notice: '你的回應儲存成功！' }
       else
-        format.html { redirect_to [:admin, @comment.post], notice: '你的回應儲存失敗！' }
+        format.html { redirect_to @comment.post, notice: '你的回應儲存失敗！' }
       end
     end
   end

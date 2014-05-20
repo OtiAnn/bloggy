@@ -1,7 +1,7 @@
-class Admin::PostsController < ApplicationController
+class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-  
+
   def index
     @posts = Post.all
     @users = User.all
@@ -30,7 +30,7 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to [:admin, @post], notice: '文章儲存成功！' }
+        format.html { redirect_to @post, notice: '文章儲存成功！' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class Admin::PostsController < ApplicationController
     @user = User.all
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to [:admin, @post], notice: '文章更新成功！' }
+        format.html { redirect_to @post, notice: '文章更新成功！' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -55,7 +55,7 @@ class Admin::PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to admin_posts_url, notice: '文章刪除成功！' }
+      format.html { redirect_to posts_url, notice: '文章刪除成功！' }
       format.json { head :no_content }
     end
   end
