@@ -19,18 +19,18 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     session[:previous_url] || root_path
   end
+  #讓登入畫面回到前一頁
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :user_name
   end
   #讓註冊時的名字可以被存取下來
 
-
   protect_from_forgery with: :exception
   helper_method :all_categories
   helper_method :all_posts
   helper_method :all_comments
-  # before_action :authenticate_user!
+
   def all_categories
   	@categories = Category.all
   end
