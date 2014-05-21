@@ -43,4 +43,8 @@ class ApplicationController < ActionController::Base
     @comments = Comment.all
   end
 
+  def all_users
+    @users = User.all
+  end
+
 end
