@@ -1,0 +1,87 @@
+/*content*/
+.content{
+  position: relative;
+  max-width: 750px;
+  min-height: 700px;
+  padding: 0 0 40px 0;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+  /*post*/
+  .post{
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    padding: 20px;
+    padding-bottom: 52px;
+    margin-bottom: 60px;
+    min-height: 200px;
+    background-color: rgba(255,255,255,0.7);
+  }
+  .post .title {
+    height: 30px;
+    padding: 0;
+    padding-left: 30px;
+    letter-spacing: 1px;
+    font-family: 'Abel', sans-serif;
+  }
+
+  .post .title a {
+    text-decoration: none;
+    color: #202020;
+  }
+  .post ul {
+    float: left;
+    list-style: none;
+  }
+  .post .note {
+    text-align: right;
+    margin-bottom: -20px;
+    margin-top: -20px;
+    margin-right: 34px;
+    letter-spacing: 2px;
+  }
+  .post p {
+    padding: 20px 30px 30px 30px;
+    line-height: 2;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+  }
+
+  .post a {
+    text-decoration: none;
+    color: #202020;
+  }
+  .post a:hover{
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+
+  /*comment*/
+  .comment{
+    border: 1px solid rgba(62, 143, 168, 0.50);
+    border-radius: 2px;
+    padding: 5px 25px;
+    margin-top: 30px;
+    background-color: rgba(52, 155, 203, 0.5);
+    font-family: monospace, Courier, "Courier New";
+    font-size: 16px;
+  }
+
+  .comment .title {
+    letter-spacing: 8px;
+    height: 30px;
+    color: #fff;
+  }
+
+  .comment #user_name {
+    letter-spacing: 5px;
+    padding-left: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 122, 255, 0.5);
+  }
+
+  .comment p {
+    padding: 0 35px;
+    color: #C1F2F6;
+    letter-spacing: 2px;
+  }

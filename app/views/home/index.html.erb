@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% all_posts.limit(4).each do |post| %>
 <div class="post">
 	<h2 class="title"><%= link_to post.title, post_path(post) %></h2>
 	<div class="note"><small>文章作者：<%= post.user.user_name %>&nbsp;&nbsp;|&nbsp;&nbsp;發表時間：<%= post.created_at.strftime("%b %d, %Y") %></small></div>
