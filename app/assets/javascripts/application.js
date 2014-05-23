@@ -18,8 +18,8 @@
 
 $(document).on('page:change', function() {
 
-	$("#toggle-sidebar").on('click', function() {
-		$('.sidebar').toggleClass('js-slide-left');
-	});
+    $("#toggle-sidebar").on('click', function() {
+      $('.sidebar').toggleClass('js-slide-left');
+    });
 
 });
