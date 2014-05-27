@@ -2,7 +2,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-  right: -270px;
+  right: -255px;
   -webkit-transition: all 0.3s ease-out;
 }
 
