@@ -6,6 +6,8 @@ class PostsController < ApplicationController
     # @posts = Post.all
     @users = User.all
     @posts = Post.paginate(:page => params[:page], :per_page => 4)
+    @q = Post.search(params[:q])
+    @posts = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 4)
   end
 
   def show
