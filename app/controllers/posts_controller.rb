@@ -14,6 +14,10 @@ class PostsController < ApplicationController
     @comment = @post.comments.build
     @post = Post.find(params[:id])
     @user = User.all
+    respond_to do |format|
+      format.html
+      format.json {render json: RDiscount.new(@post.body, :no_superscript).to_html}
+    end
   end
 
   def new

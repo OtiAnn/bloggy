@@ -1,10 +1,10 @@
 <div class="post">
 	<h2 class="title"><%= @post.title %></h2>
-	<p>
-	  <%= @post.body %>
+	<p id="content">
+
 	</p>
   	  <%= image_tag(@post.picture_url, width: '100%') if @post.picture.present? %>
-  	<div class="note"> 
+  	<div class="note">
   		<br /><br />
   		<small>文章作者：<%= @post.user.user_name %> | 發表時間：<%= @post.created_at.strftime("%b %d, %Y") %></small>
 	</div>
@@ -21,3 +21,16 @@
 <br />
 <br />
 </div>
+
+<script>
+  //var data = '';
+  $().ready(function() {
+     //$("#content").html(data);
+     // debugger
+    $.ajax({
+      url: '<%= post_path(@post) %>.json',
+      type: 'GET',
+      dataType:'text',
+    }).done(function(data) { $("#content").html(data);});
+  });
+</script>

@@ -36,6 +36,11 @@ select{
 	padding-left: 85%;
 }
 
+.alert{
+	color: rgba(253, 235, 162, 0.9);
+  font-size: 20px;
+}
+
 /*body*/
 body{
 	margin:0;
