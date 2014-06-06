@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :posts do
-    collection do
-      match 'search' => 'posts#index', :via => [:get, :post], :as => :search
-    end
-  end
+  resources :posts
+  # do
+  #   collection do
+  #     match 'search' => 'posts#index', :via => [:get, :post], :as => :search
+  #   end
+  # end
 
   # get "posts", :to => "admin/posts#index"
   # get "posts/new", :to => "admin/posts#new"

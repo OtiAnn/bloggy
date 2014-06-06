@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :site_search
+  before_action :set_search
 
   protected
 
@@ -48,9 +48,8 @@ class ApplicationController < ActionController::Base
     @users = User.all
   end
 
-  def site_search
+  def set_search
     @q = Post.search(params[:q])
-    @search_posts = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 4)
   end
 
 end
