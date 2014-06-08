@@ -49,6 +49,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_search
+    params[:q][:title_or_body_cont].strip! if params[:q]
     @q = Post.search(params[:q])
   end
 
