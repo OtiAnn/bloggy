@@ -9,20 +9,29 @@
 }
   /*post*/
   .post{
-    border: 1px solid #BEBEBE;
-    border-radius: 5px;
-    padding: 20px;
-    padding-bottom: 52px;
+    padding: 60px;
     margin-bottom: 60px;
-    min-height: 200px;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgb(255, 255, 231);
+    position: relative;
+    box-shadow: 10px 10px 0 #eee;
+  }
+  .post .category{
+    background-color: rgb(123, 228, 215);
+    display: block;
+    width: 150px;
+    padding: 8px;
+    position: absolute;
+    color: #fff;
+    letter-spacing: 2px;
+    font-family: fantasy;
+    top: 15px;
+    left: -10px;
+    margin: 0px;
   }
   .post .title {
-    height: 30px;
-    padding: 0;
     padding-left: 30px;
-    letter-spacing: 1px;
-    font-family: 'Abel', sans-serif;
+    letter-spacing: 3px;
+    font-size: 40px;
   }
 
   .post .title a {
@@ -30,17 +39,14 @@
     color: #202020;
   }
   .post ul {
-    float: left;
     list-style: none;
   }
   .post .note {
-    text-align: right;
-    margin-bottom: -20px;
-    margin-top: -20px;
-    margin-right: 34px;
-    letter-spacing: 2px;
+    position: absolute;
+    right: 5%;
+    letter-spacing: 3px;
   }
-  .post p {
+  .post > p {
     padding: 20px 30px 30px 30px;
     line-height: 2;
     letter-spacing: 1px;
@@ -58,30 +64,44 @@
 
   /*comment*/
   .comment{
-    border: 1px solid rgba(62, 143, 168, 0.50);
-    border-radius: 2px;
-    padding: 5px 25px;
-    margin-top: 30px;
-    background-color: rgba(37, 33, 138, 0.5);
-    font-family: monospace, Courier, "Courier New";
-    font-size: 16px;
+    padding: 60px;
+    padding-top: 80px;
+    background-color: rgb(176, 220, 255);
+    box-shadow: 10px 10px 0 #eee;
+    position: relative;
   }
-
+  .comment .category{
+    background-color: rgb(123, 148, 228);
+    display: block;
+    width: 150px;
+    padding: 8px;
+    position: absolute;
+    color: #000;
+    letter-spacing: 2px;
+    font-family: fantasy;
+    top: 15px;
+    left: -10px;
+    margin: 0px;
+  }
   .comment .title {
     letter-spacing: 8px;
     height: 30px;
-    color: #fff;
+    color: #000;
   }
 
   .comment #user_name {
     letter-spacing: 5px;
     padding-left: 15px;
-    color: #fff;
+    color: #000;
     text-shadow: 1px 1px 3px rgba(0, 122, 255, 0.5);
   }
 
   .comment p {
     padding: 0 35px;
-    color: #C1F2F6;
+    color: #000;
     letter-spacing: 2px;
+  }
+
+  #comment-btn {
+    color: #aaa;
   }

@@ -1,11 +1,15 @@
-<div class="post">
-	<h2 class="title">About Us</h1>
+<div class="post-user">
 	<% @users.each do |user| %>
-	<ul>
-		<li class="aboutus">
-			<div class="user-gravatar"><%= image_tag user.gravatar_url %></div>
-			<div class="user-name"><%= user.user_name %><div>
-		</li>
-	</ul>
+		<div class="user">
+      <div class="user-gravatar">
+        <p><%= user.user_name %></p>
+        <%= image_tag user.gravatar_url %><br>
+      </div>
+      <div class="user-info">
+        <span class="lsf-icon" title="github"><%= link_to '',"https://github.com/OtiAnn/" %></span>
+        <span class="lsf-icon" title="facebook"><%= link_to '',"http://www.facebook.com/AnnieChen5/" %></span>
+        <span class="lsf-icon" title="blogger"><%= link_to '',"http://anniebh.blogspot.tw/" %></span>
+      </div>
+    </div>
 	<% end %>
 </div>

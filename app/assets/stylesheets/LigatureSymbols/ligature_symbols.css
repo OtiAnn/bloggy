@@ -31,33 +31,6 @@
   margin-right:0.3em;
   font-size:190%;
 }
-.lsf-icon.about:before {
-  color: #063263;
-  content: '\E05c';
-}
-.lsf-icon.blogpost:before {
-  content: '\E002';
-  color: #063263;
-}
-.lsf-icon.home:before {
-  content: '\E072';
-  color: #063263;
-}
-
-.lsf-icon.contact:before {
-  content: '\E097';
-  color: #063263;
-}
-
-.lsf-icon.comments:before {
-  content: '\E035';
-  font-size: 140%;
-}
-
-.lsf-icon.readmore:before {
-  content: '\E020';
-  font-size: 140%;
-}
 
 .lsf-icon.menu {
     padding: 2px;

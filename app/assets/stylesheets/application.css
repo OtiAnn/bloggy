@@ -26,7 +26,7 @@ textarea{
 input{
 	height: 20px;
 	width: 100%;
-	font-size: 16px;
+	font-size: 22px;
 }
 select{
 	height: 20px;
@@ -34,22 +34,27 @@ select{
 }
 .submit{
 	padding-left: 85%;
+	height: 30px;
+	font-size: 26px;
 }
 
 .alert{
-	color: rgba(253, 235, 162, 0.9);
+	color: #000;
   font-size: 20px;
 }
+
+
 
 /*body*/
 body{
 	margin:0;
 	padding:0;
 	height:100%;
-	background-image: url("bg.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
+	/*background-image: url("2.jpg");*/
+	/*background-repeat: no-repeat;*/
+	/*background-attachment: fixed;*/
+	/*background-size: cover;*/
+	background-color: #fff;
 }
 #wrapper{
 	min-height:100%;
@@ -137,40 +142,53 @@ body{
 
 /*footer*/
 .footer{
-	height: 40px;
+	height: 50px;
 	width:100%;
 	text-align: center;
 	font-family: monospace, Courier, "Courier New";
 	position:absolute;
 	bottom: 0;
 	color: rgba(255,255,255,0.7);
+	background-color: #aaa
 }
 
 /*gavatar*/
+.post-user{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    min-height: 200px;
+    background-color: rgb(255, 255, 231);
+    position: relative;
+    box-shadow: 10px 10px 0 #eee;
+  }
+
+.user {
+	float: left;
+}
 
 .user-gravatar {
-    display: inline-block;
-    width: 100px;
-    position: relative;
-    margin: 0;
+	margin-left: 60px;
 }
 
 .user-gravatar img {
-  position: absolute;
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	top: -50px;
-	margin: 20px;
+	border: 5px solid #000;
+	box-shadow: 1px 1px 1px 1px #aaa;
 }
 
-.aboutus {
-	padding: 0;
+.user-gravatar p {
+	display: block;
+	width: 110px;
+	letter-spacing: 3px;
+	font-weight: bold;
 	text-align: center;
 }
 
-.aboutus .user-name {
+.user-info {
 	position: relative;
-	top: 80px;
-	left: 70%;
+	left: 70px;
+	margin-bottom: 50px;
 }

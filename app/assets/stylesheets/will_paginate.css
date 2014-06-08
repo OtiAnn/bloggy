@@ -5,7 +5,7 @@
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.5em; }
   .apple_pagination .disabled {
-    color: #aaaaaa; }
+    color: #000; }
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
@@ -20,6 +20,6 @@
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
   .apple_pagination a {
     text-decoration: none;
-    color: rgb(212, 233, 233); }
+    color: #aaa; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }

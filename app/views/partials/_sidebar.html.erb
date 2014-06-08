@@ -29,7 +29,7 @@
 			<h2>LOGIN</h2>
 			<ul>
 				<% if user_signed_in? %>
-  				<p id="login"><strong><%= current_user.user_name %></strong>登入中！</p><br />
+  				<p id="login"><%= current_user.user_name %>登入中！</p><br />
   				<li><p><%= link_to '帳號資訊', edit_user_registration_path, :class => 'navbar-link' %></p></li>
   				<li><p><%= link_to '新增文章', new_post_path %></p></li>
   				<li><p><%= link_to '管理後台', pages_admin_path %></p></li>

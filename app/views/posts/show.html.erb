@@ -1,5 +1,6 @@
 <div class="post">
-	<h2 class="title"><%= @post.title %></h2>
+	<h3 class="category"><%= @post.category.name if @post.category_id? %></h3>
+  <h2 class="title"><%= @post.title %></h2>
 	<p id="content">
 
 	</p>
@@ -11,7 +12,7 @@
 </div>
 
 <div class="comment">
-	<h3 class="title">訪客回應</h3>
+	<h3 class="category">訪客回應</h3>
 	<% @post.comments.each do |comment| %>
 		<div id="user_name"><%= comment.user_name %></div>
 			<p><%= comment.body %></p>
