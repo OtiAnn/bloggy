@@ -1,12 +1,13 @@
-	<div class="post">
-	<h2 class="title">文章管理</h2>
+<div class="setting lsf-icon" title="setting">管理後台</div>
+<br>
+<div class="post">
+	<h2 class="category">Posts</h2>
+	<div class="note lsf-icon" title="add"><%= link_to 'New Post', new_post_path %></div>
 	<% @user_posts.each do |post| %>
 		<ul>
-			<li><%= post.title %>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-				<%= link_to "查看", post_path(post) %> |
-				<%= link_to "編輯", edit_post_path(post) %> |
-				<%= link_to '刪除', post_path(post), method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+			<li><span class="lsf-icon" title="stop"><%= link_to post.title, post %></span><br>
+				<span class="lsf-icon edit" title="edit"><%= link_to "編輯", edit_post_path(post) %></span>
+				<span class="lsf-icon edit" title="remove"><%= link_to '刪除', post_path(post), method: :delete, data: { confirm: '確定刪除嗎？' } %></span></li>
 		</ul>
 	<% end %>
 </div>
@@ -14,23 +15,24 @@
 <% if current_user.admin? %>
 
 <div class="post">
-	<h2 class="title">文章目錄管理</h2>
+	<h2 class="category">Categories</h2>
+	<div class="note lsf-icon" title="add"><%= link_to 'New Category', new_category_path %></div>
 	<% all_categories.each do |cat| %>
 		<ul>
-			<li><%= cat.name %>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-				<%= link_to "查看", cat %> |
-				<%= link_to "編輯", edit_category_path(cat) %> |
-				<%= link_to '刪除', cat, method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+			<li><span class="lsf-icon" title="stop"><%= link_to cat.name, cat %></span><br>
+				<span class="lsf-icon edit" title="edit"><%= link_to "編輯", edit_category_path(cat) %></span>
+				<span class="lsf-icon edit" title="remove"><%= link_to '刪除', cat, method: :delete, data: { confirm: '確定刪除嗎？' } %></sapn>
+			</li>
 		</ul>
 	<% end %>
 </div>
 
 <div class="post">
-	<h2 class="title">訪客回應管理</h2>
+	<h2 class="category">Comments</h2>
+	<h3 class="title">這裡要全刪！把刪除功能移到回應區！</h3>
 	<% all_comments.each do |com| %>
 		<ul>
-			<li><%= com.user_name %>
+			<li><span class="lsf-icon" title="stop"><%= com.post.title %></span> | <%= com.user_name %>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 				<%= link_to "查看", com %> |
 				<%= link_to "編輯", edit_comment_path(com) %> |
@@ -40,7 +42,13 @@
 </div>
 
 <div class="post">
-	<h2 class="title">使用者帳號管理</h2>
+	<h2 class="category">Users</h2>
+	<h3 class="title">這裡要研究一下devise的刪除功能！</h3>
+	<% User.all.each do |user| %>
+	<ul>
+		<li><span class="lsf-icon" title="stop"><%= user.user_name %></span> | <%= user.email %> | <%= link_to '刪除', "/admin/users/#{user.id}",method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+	</ul>
+	<% end %>
 </div>
 
 <% end %>

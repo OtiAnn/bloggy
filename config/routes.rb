@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get 'pages/admin'
   get 'pages/contact'
 
+  namespace :admin do
+    resources :users, :only => [:destroy]
+  end
+
   resources :categories
 
   root 'home#index'
