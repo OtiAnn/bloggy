@@ -46,7 +46,7 @@
 	<h3 class="title">這裡要研究一下devise的刪除功能！</h3>
 	<% User.all.each do |user| %>
 	<ul>
-		<li><span class="lsf-icon" title="stop"><%= user.user_name %></span> | <%= user.email %> | <%= link_to '刪除', "/admin/users/#{user.id}",method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
+		<li><span class="lsf-icon" title="stop"><%= user.user_name %></span> | <%= user.email %> | <%= link_to '刪除', admin_user_path(user),method: :delete, data: { confirm: '確定刪除嗎？' } %></li>
 	</ul>
 	<% end %>
 </div>
