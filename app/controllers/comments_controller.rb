@@ -53,7 +53,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: '您的回應刪除成功！' }
+      format.html { redirect_to :back, notice: '您的回應刪除成功！' }
       format.json { head :no_content }
     end
   end

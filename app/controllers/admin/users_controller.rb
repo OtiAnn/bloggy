@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user.destroy!
     respond_to do |format|
-      format.html { redirect_to "/" , notice: '帳號刪除成功！' }
+      format.html { redirect_to :back , notice: '帳號刪除成功！' }
       format.json { head :no_content }
     end
   end

@@ -61,7 +61,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: '文章刪除成功！' }
+      format.html { redirect_to :back, notice: '文章刪除成功！' }
       format.json { head :no_content }
     end
   end
