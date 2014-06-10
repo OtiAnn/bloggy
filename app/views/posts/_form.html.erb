@@ -12,25 +12,25 @@
   <% end %>
 
   <div><br><br>
-    <%= f.label :"文章標題" %><br><br>
+    <span class="lsf-icon" title="stop"><%= f.label :"文章標題" %></span><br><br>
     <%= f.text_field :title %>
   </div>
   <br />
   <div>
-    <%= f.label :"文章內容" %><br><br>
+    <span class="lsf-icon" title="stop"><%= f.label :"文章內容" %></span><br><br>
     <%= f.text_area :body %>
   </div>
   <br />
   <div>
-    <%= f.label :"上傳圖片" %><br><br>
-    <%= f.file_field :picture %>
+    <span class="lsf-icon" title="stop"><%= f.label :"上傳圖片" %></span><br><br>
+    <%= f.file_field :picture, :class => "upload" %>
   </div>
   <br />
   <div>
-    文章類別：<%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]},{:include_blank => "選擇類別"} %><br>
+    <span class="lsf-icon" title="stop">文章類別：</span><%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]},{:include_blank => "選擇類別"} %><br>
   </div>
   <br />
   <div class="submit">
-    <%= f.submit %>
+    <%= f.submit :"送出", :class => "btn" %>
   </div>
 <% end %>

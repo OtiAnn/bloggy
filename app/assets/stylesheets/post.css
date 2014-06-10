@@ -13,13 +13,14 @@
     margin-bottom: 60px;
     background-color: rgb(255, 255, 231);
     position: relative;
-    box-shadow: 10px 10px 0 #eee;
+    box-shadow: 10px 10px 0 #C2C2C2;
   }
   .post .category{
-    background-color: rgb(123, 228, 215);
+    background-color: rgb(48, 201, 182);
     display: block;
     width: 150px;
     padding: 8px;
+    padding-top: 10px;
     position: absolute;
     color: #fff;
     letter-spacing: 2px;
@@ -27,11 +28,13 @@
     top: 15px;
     left: -10px;
     margin: 0px;
+    box-shadow: 2px 2px 0 #eee;
   }
   .post .title {
     padding-left: 30px;
     letter-spacing: 3px;
     font-size: 40px;
+    height: 30px;
   }
 
   .post .title a {
@@ -53,13 +56,16 @@
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
   }
-
+  .post .edit {
+    margin-left: 30px;
+  }
   .post a {
     text-decoration: none;
     color: #202020;
+    letter-spacing: 2px;
   }
   .post a:hover{
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-size: 102%;
   }
 
   /*comment*/
@@ -67,7 +73,7 @@
     padding: 60px;
     padding-top: 80px;
     background-color: rgb(176, 220, 255);
-    box-shadow: 10px 10px 0 #eee;
+    box-shadow: 10px 10px 0 #C2C2C2;
     position: relative;
   }
   .comment .category{
@@ -75,13 +81,15 @@
     display: block;
     width: 150px;
     padding: 8px;
+    padding-top: 15px;
     position: absolute;
-    color: #000;
+    color: #fff;
     letter-spacing: 2px;
     font-family: fantasy;
     top: 15px;
     left: -10px;
     margin: 0px;
+    box-shadow: 2px 2px 0 #a8a8a8;
   }
   .comment .title {
     letter-spacing: 8px;
@@ -93,15 +101,31 @@
     letter-spacing: 5px;
     padding-left: 15px;
     color: #000;
-    text-shadow: 1px 1px 3px rgba(0, 122, 255, 0.5);
+    font-weight: bolder;
   }
 
   .comment p {
-    padding: 0 35px;
     color: #000;
     letter-spacing: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    min-height: 35px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 2px;
+    padding-top: 18px;
+    padding-left: 20px;
   }
 
   #comment-btn {
     color: #aaa;
+  }
+
+/*setting*/
+  .setting {
+    background-color: rgb(25, 60, 88);
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 0 #C2C2C2;
   }

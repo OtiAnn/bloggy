@@ -21,28 +21,92 @@
 textarea{
 	width: 100%;
 	height: 120px;
-	font-size: 16px;
+	font-size: 20px;
+	background-color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 2px;
 }
+textarea:focus{
+	background-color: rgba(255,255,255,0.6);
+	outline: solid;
+	outline-color: #ccc;
+}
+
 input{
-	height: 20px;
 	width: 100%;
-	font-size: 22px;
+	font-size: 20px;
+	background-color: #fff;
+	border: none;
+	height: 35px;
+	outline: none;
+	border-radius: 2px;
+}
+input:focus{
+	background-color: rgba(255,255,255,0.6);
+	outline: solid;
+	outline-color: #ccc;
 }
 select{
-	height: 20px;
-	font-size: 16px;
+	height: 35px;
+	font-size: 20px;
+	background-color: rgb(25, 60, 88);
+  color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 2px;
 }
-.submit{
+
+.upload {
+	background-color: rgba(255,255,255,0.6);
+	width: 200px;
+	outline: none;
+	font-size: 16px;
+	height: 35px;
+}
+
+.submit {
 	padding-left: 85%;
+}
+
+.btn {
+	background-color: rgb(25, 60, 88);
+  color: #fff;
+  margin-top: 20px;
+}
+
+.btn:focus {
+	background-color: rgb(25, 60, 88);
+  color: #fff;
+  outline: none;
+}
+
+.delete {
+	background-color: rgb(187, 36, 36);
+}
+
+.delete:focus {
+	background-color: rgb(187, 36, 36);
+}
+
+.check-box {
+	width: 30px;
 	height: 30px;
-	font-size: 26px;
 }
 
 .alert{
-	color: #000;
-  font-size: 20px;
+	color: #BD1010;
+	text-align: center;
+	background-color: #FFE2E2;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	border-radius: 2px;
+	box-shadow: 10px 10px 0 #DBC4C4;
+	margin-bottom: 30px;
 }
-
+.alert ul{
+	list-style: none;
+}
 
 
 /*body*/
@@ -75,7 +139,7 @@ body{
 			font-family: 'Abel', sans-serif;
 			font-size: 3.8em;
 			font-weight: bold;
-			color: #063263;
+			color: #000;
 			margin-top: 0;
 
 		}
@@ -111,7 +175,7 @@ body{
 			margin: 0 5%;
 		}
 		#menu a{
-			color: #063263;
+			color: #000;
 			text-decoration: none;
 			font: normal 20px sans-serif;
 		}
@@ -121,7 +185,7 @@ body{
 			left:50%;
 			margin-left: 0%;
 			height: 4px;
-			background-color: #063263;
+			background-color: #000;
 			opacity: 0.5;
 			-webkit-transition: all 0.3s;
 					transition: all 0.3s;
@@ -131,14 +195,6 @@ body{
 			margin-left: -50%;
 			opacity: 1;
 		}
-		/*#menu a:hover:after {
-		content: " ";
-		display: block;
-		border: 8px solid;
-		border-bottom: 0;
-		border-left: 0;
-		border-right: 0;
-		}*/
 
 /*footer*/
 .footer{
@@ -162,6 +218,14 @@ body{
     position: relative;
     box-shadow: 10px 10px 0 #eee;
   }
+ .post-user a {
+ 		text-decoration: none;
+ 		color: #000;
+ }
+
+	.post-user a:hover {
+		font-size: 102%;
+	}
 
 .user {
 	float: left;

@@ -1,12 +1,20 @@
-<h2>Resend unlock instructions</h2>
-
+<% if resource.errors.empty? %>
+  <%= '' %>
+<% else%>
+  <div class="alert">
+    <%= devise_error_messages! %>
+  </div>
+<% end %>
+<h2 class="setting lsf-icon" title="setup">Resend unlock instructions</h2>
+<div class="post">
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :"信箱：" %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.submit "Resend unlock instructions" %></div>
+  <div class="submit"><%= f.submit "重新送出", :class => "btn" %></div>
 <% end %>
-<hr />
+<br>
+<hr>
 <%= render "devise/shared/links" %>
+</div>

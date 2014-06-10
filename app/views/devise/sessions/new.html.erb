@@ -1,20 +1,20 @@
+<h2 class="setting lsf-icon" title="login">登入</h2>
 <div class="post">
-<h2 class="title">登入</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+
+  <span class="lsf-icon" title="stop"><%= f.label :"信箱：" %><br />
+  <%= f.email_field :email, autofocus: true %></span>
   <br />
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <span class="lsf-icon" title="stop"><%= f.label :"密碼：" %><br />
+    <%= f.password_field :password, autocomplete: "off" %></span>
   <br />
   <% if devise_mapping.rememberable? -%>
-    <span><%= f.check_box :remember_me %> <%= f.label :remember_me %></span>
+    <%= f.check_box :remember_me, :class => "check-box" %><%= f.label :"記住我" %>
   <% end -%>
 
-  <div class="submit"><%= f.submit "登入" %></div>
+  <div class="submit"><%= f.submit "登入", :class => "btn" %></div>
 <% end %>
-<br />
-<br />
+<br>
+<hr>
 <%= render "devise/shared/links" %>
 </div>

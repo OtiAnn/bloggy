@@ -1,12 +1,20 @@
-<h2>Resend confirmation instructions</h2>
-
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.submit "Resend confirmation instructions" %></div>
+<% if resource.errors.empty? %>
+  <%= '' %>
+<% else%>
+  <div class="alert">
+    <%= devise_error_messages! %>
+  </div>
 <% end %>
-<hr />
+<h2 class="setting lsf-icon" title="setup">重新送出確認指示</h2>
+<div class="post">
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+
+  <span class="lsf-icon" title="stop"><%= f.label :"信箱：" %><br />
+  <%= f.email_field :email, autofocus: true %></span>
+
+  <div class="submit"><%= f.submit "重新送出", :class => "btn" %></div>
+<% end %>
+<br>
+<hr>
 <%= render "devise/shared/links" %>
+</div>

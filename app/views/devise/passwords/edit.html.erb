@@ -1,16 +1,24 @@
-<h2>Change your password</h2>
-
+<% if resource.errors.empty? %>
+  <%= '' %>
+<% else%>
+  <div class="alert">
+    <%= devise_error_messages! %>
+  </div>
+<% end %>
+<h2 class="setting lsf-icon" title="edit">更改密碼</h2>
+<div class="post">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div><%= f.label :password, "New password" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %></div>
+  <span class="lsf-icon" title="stop"><%= f.label :"密碼：", "New password" %><br />
+    <%= f.password_field :password, autofocus: true, autocomplete: "off" %></span>
 
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <span class="lsf-icon" title="stop"><%= f.label :"確認密碼：", "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></span>
 
-  <div><%= f.submit "Change my password" %></div>
+  <div class="submit"><%= f.submit "確認更改", :class => "btn" %></div>
 <% end %>
-<hr />
+<br>
+<hr>
 <%= render "devise/shared/links" %>
+</div>

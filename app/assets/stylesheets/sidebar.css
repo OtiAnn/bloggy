@@ -61,7 +61,7 @@
     position: relative;
     padding-left: 60px;
     font-size: 24px;
-    color: #aaa;
+    color: #000;
   }
   .sidebar h2:before {
     content: " ";
@@ -69,7 +69,7 @@
     position: absolute;
     left: 30px;
     border: 13px solid transparent;
-    border-top: 18px solid rgba(255, 255, 255, 0.5);
+    border-top: 18px solid #000;
     height: 0;
     width: 0;
   }
