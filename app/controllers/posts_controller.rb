@@ -3,20 +3,19 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    # @posts = Post.all
     @users = User.all
     @posts = Post.paginate(:page => params[:page], :per_page => 4)
-    # @q = Post.search(params[:q])
-    @posts = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 4)
+    @posts = @q.result.paginate(:page => params[:page], :per_page => 4)
   end
 
   def show
     @comment = @post.comments.build
     @post = Post.find(params[:id])
     @user = User.all
+    @rd = RDiscount.new(@post.body, :no_superscript).to_html
     respond_to do |format|
       format.html
-      format.json {render json: RDiscount.new(@post.body, :no_superscript).to_html}
+      format.json
     end
   end
 

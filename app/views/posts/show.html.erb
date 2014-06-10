@@ -2,7 +2,7 @@
 	<h3 class="category"><%= @post.category.name if @post.category_id? %></h3>
   <h2 class="title"><%= @post.title %></h2>
 	<p id="content">
-
+    <%= raw @rd %>
 	</p>
   	  <%= image_tag(@post.picture_url, width: '100%') if @post.picture.present? %>
   	<div class="note">
@@ -14,24 +14,11 @@
 <div class="comment">
 	<h3 class="category">訪客回應</h3>
 	<% @post.comments.each do |comment| %>
-		<div id="user_name"><%= comment.user_name %></div>
+		<div id="user_name" class="lsf-icon" title="comment"><%= comment.user_name %></div>
 			<p><%= comment.body %></p>
 	<% end %>
 <br />
 	<%= render 'comments/form' %>
 <br />
-<br />
 </div>
 
-<script>
-  //var data = '';
-  $().ready(function() {
-     //$("#content").html(data);
-     // debugger
-    $.ajax({
-      url: '<%= post_path(@post) %>.json',
-      type: 'GET',
-      dataType:'text',
-    }).done(function(data) { $("#content").html(data);});
-  });
-</script>

@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   after_filter :store_location
-
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
 
@@ -14,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   def store_location
     return if sign_in_page?
+    puts request.fullpath
     session[:previous_url] = request.fullpath
   end
 
@@ -50,6 +50,7 @@ class ApplicationController < ActionController::Base
 
   def set_search
     params[:q][:title_or_body_cont].strip! if params[:q]
+    #讓搜尋時的文字可忽略前後的空格
     @q = Post.search(params[:q])
   end
 
