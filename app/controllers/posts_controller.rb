@@ -1,16 +1,18 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :increment_counter, only: [:show]
 
   def index
     @users = User.all
-    @posts = Post.paginate(:page => params[:page], :per_page => 4)
-    @posts = @q.result.paginate(:page => params[:page], :per_page => 4)
+    @posts = Post.paginate(:page => params[:page], :per_page => 4).order("created_at DESC")
+    @posts = @q.result.paginate(:page => params[:page], :per_page => 4).order("created_at DESC")
   end
 
   def show
     @comment = @post.comments.build
     @post = Post.find(params[:id])
+    Post.increment_counter(:posts_count, @post.id)
     @user = User.all
     @rd = RDiscount.new(@post.body, :no_superscript).to_html
     respond_to do |format|
@@ -75,5 +77,8 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :picture, :user_id, :category_id)
+    end
+    def increment_counter
+      @post.posts_count += 1
     end
 end

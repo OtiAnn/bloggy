@@ -7,6 +7,7 @@
       <span class="lsf-icon" title="calendar"><%= post.created_at.strftime("%b %d, %Y") %></span>
       <span class="lsf-icon" title="comments">
       <%= post.comments.count %></span>
+      <span class="lsf-icon" title="view"><%= post.posts_count %></span>
     </small></div>
 	</div>
 <% end.empty? %>

@@ -1,4 +1,4 @@
-<% all_posts.limit(4).each do |post| %>
+<% all_posts.limit(4).order("created_at DESC").each do |post| %>
   <div class="post">
     <h3 class="category"><%= post.category.name if post.category_id? %></h3>
   	<h2 class="title"><%= link_to post.title, post_path(post) %></h2>
@@ -7,6 +7,7 @@
       <span class="lsf-icon" title="calendar"><%= post.created_at.strftime("%b %d, %Y") %></span>
       <span class="lsf-icon" title="comments">
       <%= post.comments.count %></span>
+      <span class="lsf-icon" title="view"><%= post.posts_count %></span>
     </small></div>
   	<%#= truncate(post.body, length: 100) %>
   </div>

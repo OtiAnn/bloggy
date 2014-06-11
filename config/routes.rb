@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'pages/about'
   get 'pages/admin'
-  get 'pages/contact'
+  get 'pages/toppost'
 
   namespace :admin do
     resources :users, :only => [:destroy]

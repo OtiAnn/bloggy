@@ -1,10 +1,10 @@
 class Post < ActiveRecord::Base
 	belongs_to :category
-	belongs_to :user
+	belongs_to :user, :counter_cache => true
 	has_many :comments, :dependent => :destroy
 	mount_uploader :picture, PictureUploader
-	default_scope { order("created_at DESC") } #按照創建時間排序
-
+	# default_scope { order("created_at DESC") } #按照創建時間排序
+	# validates :title, presence: true
 
 	def set_user!(user)
     	self.user_id = user.id
