@@ -15,6 +15,12 @@
     position: relative;
     box-shadow: 10px 10px 0 #C2C2C2;
   }
+  .editrm {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
   .post .category{
     background-color: rgb(48, 201, 182);
     display: block;
@@ -40,7 +46,13 @@
   .post .title a {
     text-decoration: none;
     color: #202020;
+    font-size: 40px;
   }
+  .post .title a:hover {
+    font-size: 102%;
+    color: #202020;
+  }
+
   .post ul {
     list-style: none;
   }
@@ -65,7 +77,7 @@
     letter-spacing: 2px;
   }
   .post a:hover{
-    font-size: 102%;
+    color: rgb(255, 82, 0);
   }
 
   /*comment*/
@@ -115,6 +127,19 @@
     padding-top: 18px;
     padding-left: 20px;
   }
+
+  .comment .editcom {
+    position: relative;
+    left: 90%;
+    bottom: 35px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .comment .editcom:hover {
+    color: #ca0000;
+  }
+
 
   #comment-btn {
     color: #aaa;

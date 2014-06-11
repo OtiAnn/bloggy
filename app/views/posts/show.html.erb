@@ -1,12 +1,23 @@
 <div class="post">
 	<h3 class="category"><%= @post.category.name if @post.category_id? %></h3>
+    <div class="editrm">
+      <% if current_user.present? %>
+        <% if current_user.id == @post.user_id %>
+          <%= link_to '', post_path(@post), method: :delete, data: { confirm: "確定刪除「#{@post.title}」嗎？" }, :class => "lsf-icon", :title => "remove" %>
+          <%= link_to '', edit_post_path(@post), :class => "lsf-icon", :title => "edit" %>
+        <% end %>
+      <% end %>
+    </div>
   <h2 class="title"><%= @post.title %></h2>
-  <%= raw @rd %>
+  <%= raw @rd %><br>
   <%= image_tag(@post.picture_url, width: '100%') if @post.picture.present? %>
   <div class="note">
-  	<br /><br />
-  	<small>文章作者：<%= @post.user.user_name %> | 發表時間：<%= @post.created_at.strftime("%b %d, %Y") %></small>
-	</div>
+    <br>
+    <small>
+      <span class="lsf-icon" title="user"><%= @post.user.user_name %></span>
+      <span class="lsf-icon" title="calendar"><%= @post.created_at.strftime("%b %d, %Y") %></span>
+    </small>
+  </div>
 </div>
 
 <div class="comment">
@@ -14,9 +25,13 @@
 	<% @post.comments.each do |comment| %>
 		<div id="user_name" class="lsf-icon" title="comment"><%= comment.user_name %></div>
 			<p><%= comment.body %></p>
+      <% if current_user.present? %>
+        <% if current_user.admin == true %>
+          <%= link_to '', comment, method: :delete, data: { confirm: '確定刪除這個回應嗎？' }, :class => "lsf-icon editcom", :title => "remove" %>
+        <% end %>
+      <% end %>
 	<% end %>
   <br />
 	<%= render 'comments/form' %>
   <br />
 </div>
-
