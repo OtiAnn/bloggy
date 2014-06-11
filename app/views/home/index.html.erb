@@ -3,7 +3,7 @@
     <h3 class="category"><%= post.category.name if post.category_id? %></h3>
   	<h2 class="title"><%= link_to post.title, post_path(post) %></h2>
   	<div class="note"><small>
-      <span class="lsf-icon" title="user"><%= link_to post.user.user_name, post_path(post) %></span>
+      <span class="lsf-icon" title="user"><%= link_to post.user.user_name, user_path(post.user_id) %></span>
       <span class="lsf-icon" title="calendar"><%= post.created_at.strftime("%b %d, %Y") %></span>
       <span class="lsf-icon" title="comments">
       <%= post.comments.count %></span>

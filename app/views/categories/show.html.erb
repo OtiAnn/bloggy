@@ -14,3 +14,9 @@
 		<div class="title">Sorry, 這個類別中沒有文章！</div>
 	</div>
 <% end %>
+<div class="apple_pagination">
+  <%= will_paginate @posts,
+      :previous_label => "&#8592; Previous",
+      :next_label     => "Next &#8594;",
+      :page_gap => "&hellip;" %>
+</div>

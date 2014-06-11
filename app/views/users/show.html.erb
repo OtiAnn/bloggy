@@ -1,0 +1,23 @@
+<div class="alert lsf-icon" title="user"><%= @user.user_name %>的所有文章</div>
+<% if @posts.each do |post| %>
+  <div class="post">
+    <h3 class="category"><%= post.category.name if post.category_id? %></h3>
+    <h2 class="title"><%= link_to post.title, post_path(post) %></h2>
+    <div class="note"><small>
+      <span class="lsf-icon" title="user"><%= post.user.user_name %></span>
+      <span class="lsf-icon" title="calendar"><%= post.created_at.strftime("%b %d, %Y") %></span>
+      <span class="lsf-icon" title="comments">
+      <%= post.comments.count %></span>
+    </small></div>
+  </div>
+<% end.empty? %>
+  <div class="post">
+    <div class="title">這位作者還沒發文噢！</div>
+  </div>
+<% end %>
+<div class="apple_pagination">
+  <%= will_paginate @posts,
+      :previous_label => "&#8592; Previous",
+      :next_label     => "Next &#8594;",
+      :page_gap => "&hellip;" %>
+</div>

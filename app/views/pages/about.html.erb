@@ -2,16 +2,11 @@
 	<% @users.each do |user| %>
 		<div class="user">
       <div class="user-gravatar">
-        <p><%= user.user_name %></p>
         <%= image_tag user.gravatar_url %><br>
+        <p><%= user.user_name %></p>
       </div>
-      <div class="user-info">
-        <a href="https://github.com/OtiAnn/">
-          <span class="lsf-icon" title="github"></span></a>
-        <a href="http://www.facebook.com/AnnieChen5/">
-          <span class="lsf-icon" title="facebook"></span></a>
-        <a href="http://anniebh.blogspot.tw/">
-          <span class="lsf-icon" title="blogger"></span></a>
+      <div class="blogpost">
+        <%= link_to 'All Posts', user_path(user) %>
       </div>
     </div>
 	<% end %>
