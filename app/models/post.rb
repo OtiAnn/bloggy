@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
 	belongs_to :category
-	belongs_to :user, :counter_cache => true
+	belongs_to :user
+	belongs_to :post, :counter_cache => true
 	has_many :comments, :dependent => :destroy
 	mount_uploader :picture, PictureUploader
 	# default_scope { order("created_at DESC") } #按照創建時間排序

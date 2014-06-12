@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-  before_action :increment_counter, only: [:show]
+  after_action :increment_counter, only: [:show]
 
   def index
     @users = User.all
@@ -38,6 +38,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        # Post.increment_counter(:posts_count, @post.id)
         format.html { redirect_to @post, notice: '文章儲存成功！' }
         format.json { render :show, status: :created, location: @post }
       else
@@ -79,6 +80,6 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :body, :picture, :user_id, :category_id)
     end
     def increment_counter
-      @post.posts_count += 1
+      @post.posts_count += 1 if @post.present?
     end
 end
