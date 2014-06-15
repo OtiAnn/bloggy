@@ -1,0 +1,24 @@
+zh-TW:
+  activerecord:
+    models:
+      user: "帳號"
+      post: "文章"
+      category: "目錄"
+      comment: "留言"
+    attributes:
+      user:
+        current_password: "目前密碼"
+        email: "信箱"
+        user_name: "名字"
+        password: "密碼"
+        password_confirmation: "密碼確認"
+        admin: "管理者"
+      posts:
+        title: "文章標題"
+        body: "文章內容"
+        picture: "文章圖片"
+      categories:
+        name: "目錄名稱"
+      comments:
+        user_name: "留言者"
+        body: "留言內容"
