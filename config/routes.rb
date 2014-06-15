@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :comments
 
   devise_for :users
-  get 'pages/about'
-  get 'pages/admin'
-  get 'pages/toppost'
+  get 'about' => 'pages#about'
+  get 'admin' => 'pages#admin'
+  get 'toppost' => 'pages#toppost'
 
   namespace :admin do
     resources :users, :only => [:destroy]

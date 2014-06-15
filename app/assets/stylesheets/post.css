@@ -13,7 +13,7 @@
     margin-bottom: 60px;
     background-color: rgb(255, 255, 231);
     position: relative;
-    box-shadow: 10px 10px 0 #C2C2C2;
+    box-shadow: 5px 5px 0 #C2C2C2;
   }
   .editrm {
     position: absolute;
@@ -39,18 +39,17 @@
   .post .title {
     padding-left: 30px;
     letter-spacing: 3px;
-    font-size: 40px;
-    height: 30px;
+    font-size: 35px;
+    max-height: 70px;
   }
 
   .post .title a {
     text-decoration: none;
     color: #202020;
-    font-size: 40px;
   }
   .post .title a:hover {
-    font-size: 102%;
-    color: #202020;
+    color: #0065A8;
+    -webkit-transition: all 0.2s ease;
   }
 
   .post ul {
@@ -85,7 +84,7 @@
     padding: 60px;
     padding-top: 80px;
     background-color: rgb(176, 220, 255);
-    box-shadow: 10px 10px 0 #C2C2C2;
+    box-shadow: 5px 5px 0 #C2C2C2;
     position: relative;
   }
   .comment .category{
@@ -152,5 +151,7 @@
     text-align: center;
     font-size: 26px;
     margin-bottom: 20px;
-    box-shadow: 10px 10px 0 #C2C2C2;
+    box-shadow: 5px 5px 0 #C2C2C2;
+    height: 50px;
+    line-height: 50px;
   }
