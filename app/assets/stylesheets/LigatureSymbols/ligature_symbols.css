@@ -28,7 +28,7 @@
 
 .lsf-icon:before {
   content:attr(title);
-  margin-right:0.3em;
+  margin: 0 0.3em;
   font-size:190%;
 }
 

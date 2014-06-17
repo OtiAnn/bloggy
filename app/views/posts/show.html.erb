@@ -9,6 +9,7 @@
       <% end %>
     </div>
   <h2 class="title"><%= @post.title %></h2>
+  <hr>
   <%= raw @rd %><br>
   <%= image_tag(@post.picture_url, width: '100%') if @post.picture.present? %>
   <div class="note">
