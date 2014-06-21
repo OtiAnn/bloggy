@@ -15,6 +15,7 @@
     position: relative;
     box-shadow: 5px 5px 0 #C2C2C2;
   }
+
   .editrm {
     position: absolute;
     top: 20px;
@@ -80,7 +81,38 @@
   .post a:hover{
     color: rgb(255, 82, 0);
   }
-
+@media screen and (max-width: 480px) {
+  .post {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 80%;
+  }
+  .post a {
+    font-size: 80%;
+  }
+  .post .title {
+    padding-left: 0;
+    font-size: 25px;
+  }
+  .post .category {
+    width: 120px;
+    height: 30px;
+    margin-left: 3px;
+  }
+  .comment {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 80%;
+  }
+  .comment .category {
+    width: 120px;
+    height: 30px;
+    margin-left: 3px;
+  }
+  .submit {
+    padding-left: 30px;
+  }
+}
   /*comment*/
   .comment{
     padding: 60px;

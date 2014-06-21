@@ -1,20 +1,36 @@
 <div id="menu">
 	<ul class="main_menu">
-		<li class="lsf-icon" title="group">
-			<%= link_to "About Us", about_path %>
-			<div class="underscore"></div>
+		<li>
+			<%= link_to "About Us", about_path, :class => "lsf-icon", :title => "group" %>
+			<!-- <div class="underscore"></div> -->
 		</li>
-		<li class="lsf-icon" title="album">
-			<%= link_to "Blog Post", posts_path %>
-			<div class="underscore"></div>
+		<li>
+			<%= link_to "Blog Post", posts_path, :class => "lsf-icon", :title => "album" %>
+			<!-- <div class="underscore"></div> -->
 		</li>
-		<li class="lsf-icon" title="starempty">
-			<%= link_to "Top Post", toppost_path %>
-			<div class="underscore"></div>
+		<li>
+			<%= link_to "Top Post", toppost_path, :class => "lsf-icon", :title => "starempty" %>
+			<!-- <div class="underscore"></div> -->
 		</li>
-		<li class="lsf-icon" title="home">
-			<%= link_to "Home", root_path %>
-			<div class="underscore"></div>
+		<li>
+			<%= link_to "Home", root_path, :class => "lsf-icon", :title => "home" %>
+			<!-- <div class="underscore"></div> -->
 		</li>
 	</ul>
+	<div class="menu-480">
+		<ul>
+			<li>
+				<%= link_to "", about_path, :class => "lsf-icon", :title => "group" %>
+			</li>
+			<li>
+				<%= link_to "", posts_path, :class => "lsf-icon", :title => "album" %>
+			</li>
+			<li>
+				<%= link_to "", toppost_path, :class => "lsf-icon", :title => "starempty" %>
+			</li>
+			<li>
+				<%= link_to "", root_path, :class => "lsf-icon", :title => "home" %>
+			</li>
+		</ul>
+	</div>
 </div>
