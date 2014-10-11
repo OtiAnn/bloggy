@@ -19,7 +19,7 @@
 		</li>
 		<li>
 			<h2>近期文章</h2>
-			<ul><% all_posts.limit(4).each do |post| %>
+			<ul><% all_posts.limit(4).order("created_at DESC").each do |post| %>
 				<li><p><%= link_to post.title, post_path(:id => post.id) %>
 				</p></li>
 				<% end %>

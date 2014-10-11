@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   has_many :comments
   validates :user_name, presence: true
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable
   include Gravtastic
   gravtastic
 

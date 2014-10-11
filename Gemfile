@@ -57,6 +57,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development do
   gem 'pry-rails'
+  gem "letter_opener"
 end
 
 # Use unicorn as the app server
@@ -67,3 +68,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
