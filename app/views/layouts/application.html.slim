@@ -1,0 +1,25 @@
+DOCTYPE html
+html
+  head
+    title Bloggy
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    #wrapper.clearfix
+      #logo.header
+        p My Second Life
+        h1 
+          = link_to "Bloggy", root_path
+
+      = render partial: 'partials/navbar'
+      
+      .content
+        - if notice
+          p.alert.alert-success = notice
+        - if alert
+          p.alert.alert-danger = alert
+        = yield
+
+      = render partial: 'partials/sidebar'
+      = render partial: 'partials/footer'
