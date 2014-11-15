@@ -1,0 +1,36 @@
+.setting 管理後台
+<br>
+.post
+	h3.category Posts
+	= link_to 'New Post', new_post_path, :class =>"note lsf-icon", :title => "add"
+	- @user_posts.each do |post|
+		ul
+			li
+			= link_to '', post_path(post), method: :delete, data: { confirm: "確定刪除「#{post.title}」嗎？" }, :class => "lsf-icon", :title => "remove"
+			= link_to "", edit_post_path(post), :class => "lsf-icon", :title => "edit"
+			= link_to post.title, post
+
+- if current_user.admin?
+.post
+	h3.category Categories
+	= link_to 'New Category', new_category_path, :class =>"note lsf-icon", :title => "add"
+	- all_categories.each do |cat|
+		ul
+			li
+			= link_to '', cat, method: :delete, data: { confirm: "確定刪除「#{cat.name}」嗎？"}, :class => "lsf-icon", :title => "remove"
+			= link_to "", edit_category_path(cat),  :class => "lsf-icon", :title => "edit"
+			= cat.name
+.post
+	h3.category Users
+	- User.all.each do |user|
+		ul
+		- if user.admin == true
+			li
+				span.lsf-icon title="star" style="color: #ff0000"
+					= user.user_name + "|"
+					= user.email
+		- else
+			li
+				= link_to '', admin_user_path(user),method: :delete, data: { confirm: "確定刪除「#{user.user_name}」嗎？" }, :class => "lsf-icon edit", :title => "remove"
+				= user.user_name + "|"
+				= user.email
