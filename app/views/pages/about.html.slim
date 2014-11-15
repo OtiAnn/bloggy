@@ -1,0 +1,6 @@
+.post-user 
+  - @users.each do |user|
+    .user
+      .user-gravatar = image_tag user.gravatar_url
+      p = user.user_name
+      .blogpost = link_to 'All Posts', user_path(user)
